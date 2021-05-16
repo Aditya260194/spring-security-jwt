@@ -3,7 +3,7 @@ spring boot + spring security + jwt authorization
 
 By default when spring-security is added, it will ask for all request made to get authenticated. Deafult user is user and password is printed in console.
 
-We will overide it for our user using MyUserDetailsService which we can source to validate user from user reporsitory like database etc.
+We will override it for our user using MyUserDetailsService which we can source to validate user from user reporsitory like database etc.
 SecurityConfig class contains config setup related to the project.Important point in this is configure method which we use to map authentication for particular urls and also adding our filter nefore spring security deault filter.
 
 Steps:
