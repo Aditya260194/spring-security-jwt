@@ -8,7 +8,7 @@ SecurityConfig class contains config setup related to the project.Important poin
 
 Steps:
 1. /hello/authenticate will ask user for username and password whcih we are providing as Request Body  using AuthenticationRequest class.
-2. It will use spring secuirity's default UsernamePasswordAuthenticationToken class to validate user and password from our MyUserDetailsService
+2. It will use spring security's default UsernamePasswordAuthenticationToken class to validate user and password from our MyUserDetailsService
 
 JwtUtil
 3. After validating user, we are generating token using JwtUtil and sending the token in response so client can pass this token with eery other request.
@@ -22,6 +22,6 @@ JwtRequestFilter
 6. Since this is called before Spring-security's default filter, so authentication method is not set yet, we want authentication to now check for token not for user and password since this step we are only getting token.
 7. We validate the token and build the Authentication by fetching userdetails based on token and user and then storing userdetails in UsernamePasswordAuthenticationToken and ultimately in SecurityContextHolder.getContext().setAuthentication.
 
-8. Now request is validate using token so we will get our output. If we dont probide token then it will authentication error.
+8. Now request is validate using token, so we will get our output. If we dont probide token then it will authentication error.
 
 Note: In SecurityConfig, we have defined the session to be stateless meaning, it wont store session without authorizing user, so for every request we have to pass jwttoken, as previous token is not stored in sessiom.
