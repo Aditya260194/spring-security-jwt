@@ -28,7 +28,7 @@ public class JwtRequestFilter extends OncePerRequestFilter {
     @Autowired
     JwtUtil jwtTokenUtil;
 
-    //header -[{"key":"Authorization","value":"Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0ZXN0dXNlciIsImV4cCI6MTYxOTAzMDE3MCwiaWF0IjoxNjIxMTY1MTM3fQ.ngU4JZjHHJl1T0fXBXYXJw1InA6fIeqmcWWau33ibYs","description":""}]
+    //header -[{"key":"Authorization","value":"Bearer jwttoken","description":""}]
     @Override
     protected void doFilterInternal(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse,
                                     FilterChain filterChain) throws ServletException, IOException {
